@@ -1,4 +1,4 @@
-Authentic Phpto files app
+Authentic PhotoViewer app
 
 setup DB access - edir `.env` file in server sources and setup vars
 
