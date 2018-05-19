@@ -1,9 +1,9 @@
 Authentic Phpto files app
 
-setup DB access
+setup DB access - edir `.env` file in server sources and setup vars
 
 ```bash
-vim .env
+vim server/.env
 ```
 
 setup nginx
