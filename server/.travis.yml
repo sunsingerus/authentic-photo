@@ -1,0 +1,36 @@
+language: php
+
+services:
+  - mysql
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+
+matrix:
+  include:
+    - php: 5.6
+      script:
+        - php vendor/bin/codecept run --report --coverage-xml
+      after_script:
+        - php vendor/bin/ocular code-coverage:upload  --format=php-clover tests/_output/coverage.xml
+
+install:
+  - composer self-update
+  - composer install
+  - mv .env.dist .env
+
+before_script:
+  - echo 'always_populate_raw_post_data = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - mysql -e "CREATE DATABASE testapp;" -uroot
+  - php partisan migrate:up
+  - php partisan run:seed
+  - php -S 127.0.0.1:8888 -t ./public >/dev/null 2>&1 &
+
+script:
+  - php partisan run:test
+
+notifications:
+  email:
+    - kot_tdf@mail.ru
