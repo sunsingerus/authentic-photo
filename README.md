@@ -115,6 +115,9 @@ total 36
 
 This is `curl`-based endpoints to JSON API. 
 
-Each session has to be started with `login` comman - run `1_get_token_aka_login.sh` - it'll save access token to `access_token` file. All the rest files would use saves `access_token` file to get access.
+Each session has to be started with `login` command - thus run `1_get_token_aka_login.sh` - it'll save access token to `access_token` file. 
+
+All the rest files would use saved `access_token` file to get access to the API.
+
 Files are enumarated for convenience.
 
