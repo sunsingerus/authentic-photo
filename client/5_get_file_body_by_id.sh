@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# load token from file
+
 source access_token
 
 if [ -z $TOKEN ]; then
@@ -14,6 +16,8 @@ if [ -z "$1" ]; then
 	exit
 fi
 
+# get file details
+
 FILE_ID=$1
 
 JSON=$(curl http://localhost/api/media-file/$FILE_ID \
@@ -24,6 +28,8 @@ echo $JSON
 FILE_NAME=$(php -r "\$j = json_decode('$JSON', TRUE); echo \$j['data']['attributes']['file'];") > access_token
 #echo $FILE_NAME
 
+
+# get file body
 
 curl http://localhost:8080/$FILE_NAME \
 	--verbose \

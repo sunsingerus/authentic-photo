@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# load token from file
+
 source access_token
 
 if [ -z $TOKEN ]; then

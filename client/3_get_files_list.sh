@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# load token from file
 source access_token
 
 if [ -z $TOKEN ]; then
@@ -7,6 +8,7 @@ if [ -z $TOKEN ]; then
 	exit
 fi
 
+# get files list
 curl http://localhost/api/media-file \
 	--verbose \
         --header "Authorization: Bearer $TOKEN" \

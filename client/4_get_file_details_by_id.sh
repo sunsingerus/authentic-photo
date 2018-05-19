@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+# load token from file
 source access_token
 
 if [ -z $TOKEN ]; then
@@ -13,6 +15,7 @@ if [ -z "$1" ]; then
 	exit
 fi
 
+# get file details
 FILE_ID=$1
 
 curl http://localhost/api/media-file/$FILE_ID \

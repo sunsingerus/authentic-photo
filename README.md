@@ -113,3 +113,8 @@ total 36
 -rw-rw-rw- 1 user user 637 May 19 12:51 example.png
 ```
 
+This is `curl`-based endpoints to JSON API. 
+
+Each session has to be started with `login` comman - run `1_get_token_aka_login.sh` - it'll save access token to `access_token` file. All the rest files would use saves `access_token` file to get access.
+Files are enumarated for convenience.
+
