@@ -6,6 +6,27 @@ setup DB access - edir `.env` file in server sources and setup vars
 vim server/.env
 ```
 
+something like this
+
+```
+# Main application settings
+APP_ENV=dev
+APP_HOST=http://localhost
+APP_API_HOST=http://localhost/api
+
+# Authorization settings
+AUTH_SECRET_KEY=secret-key
+AUTH_ALLOW_HOSTS=localhost,docs.localhost
+
+# Database settings
+DB_DRIVER=mysql
+DB_HOST=localhost
+DB_NAME=photoviewer
+DB_USER=reader
+DB_PASS=qwerty
+
+```
+
 setup nginx
 ```
 server {
